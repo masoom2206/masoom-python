@@ -1,0 +1,13 @@
+-------
+This file is for testing purpose.
+-------
+This is demo.txt file.
+
+I am leaning python.
+I will use this file text in Python I/O program.
+
+This is demo.txt file.
+
+I am leaning python.
+
+I will use this file text in Python I/O program.
