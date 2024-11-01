@@ -1,4 +1,5 @@
-# Using Pillow libraray
+# Using Pillow libraray (pip3 install pillow  --break-system-packages)
+# We can also use OpenCV library for image and video processing
 
 from PIL import Image, ImageFilter
 
