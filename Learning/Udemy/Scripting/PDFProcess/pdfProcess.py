@@ -67,27 +67,41 @@ import sys
 #   output.write(filePDF)
 
 
-# -------------------
-# Merge/combine and add watermark in the PDF files
+# # -------------------
+# # Merge/combine and add watermark in the PDF files
 
+# inputs = sys.argv[1:]
+
+# def pdfCombiner(pdf_list):
+#   merger = PyPDF2.PdfFileMerger()
+#   for pdf in pdf_list:
+#     merger.append(f"Learning/Udemy/Scripting/PDFProcess/{pdf}")
+#     print(pdf)
+#   merger.write("Learning/Udemy/Scripting/PDFProcess/merger-output.pdf")
+#   # After merge the PDF add watermark
+#   pdf_file = PyPDF2.PdfFileReader(open(f"Learning/Udemy/Scripting/PDFProcess/merger-output.pdf", "rb"))
+#   watermark = PyPDF2.PdfFileReader(open("Learning/Udemy/Scripting/PDFProcess/water.pdf", "rb"))
+#   output = PyPDF2.PdfFileWriter()
+#   for i in range(pdf_file.getNumPages()):
+#     page = pdf_file.getPage(i)
+#     page.mergePage(watermark.getPage(0))
+#     output.addPage(page)
+#     with open("Learning/Udemy/Scripting/PDFProcess/super-watermark.pdf", "wb") as filePDF:
+#       output.write(filePDF)
+
+# pdfCombiner(inputs)
+
+
+# -------------------
+# Merge/combine the Airtel Bill PDF files
+# # /opt/homebrew/bin/python3 /Users/masoom2206/coading/python/masoom-python/Learning/Udemy/Scripting/PDFProcess/pdfProcess.py Apr2024.pdf May2024.pdf Jun2024.pdf Jul2024.pdf Aug2024.pdf Sep2024.pdf Oct2024.pdf
 inputs = sys.argv[1:]
 
 def pdfCombiner(pdf_list):
   merger = PyPDF2.PdfFileMerger()
   for pdf in pdf_list:
-    merger.append(f"Learning/Udemy/Scripting/PDFProcess/{pdf}")
+    merger.append(f"Learning/Udemy/Scripting/PDFProcess/Airtel/{pdf}")
     print(pdf)
-  merger.write("Learning/Udemy/Scripting/PDFProcess/merger-output.pdf")
-  # After merge the PDF add watermark
-  pdf_file = PyPDF2.PdfFileReader(open(f"Learning/Udemy/Scripting/PDFProcess/merger-output.pdf", "rb"))
-  watermark = PyPDF2.PdfFileReader(open("Learning/Udemy/Scripting/PDFProcess/water.pdf", "rb"))
-  output = PyPDF2.PdfFileWriter()
-  for i in range(pdf_file.getNumPages()):
-    page = pdf_file.getPage(i)
-    page.mergePage(watermark.getPage(0))
-    output.addPage(page)
-    with open("Learning/Udemy/Scripting/PDFProcess/super-watermark.pdf", "wb") as filePDF:
-      output.write(filePDF)
+  merger.write("Learning/Udemy/Scripting/PDFProcess/Airtel/Apr2024-Oct2024.pdf")
 
 pdfCombiner(inputs)
-
